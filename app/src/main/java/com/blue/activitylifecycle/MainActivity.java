@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.ActionMode;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent intent=new Intent(MainActivity.this,ActivitySecond.class);
-                startActivity(intent);
+
+//               Intent intent=new Intent(MainActivity.this,ActivitySecond.class);
+//                startActivity(intent);
+                Toast.makeText(MainActivity.this, "You clicked Button 1", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -39,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.d(TAG, "onResume:执行了 ");
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
     }
 
     @Override
